@@ -13,9 +13,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
-|mail|string|null: false,  unique: true|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false, unique: true, index: true|
+|mail|string|null: false, unique: true, index: true|
+|password|string|null: not|
 
 ### Association
 - has_many :groups, through:members
@@ -27,11 +27,22 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|string| null: true|
+|body|text|index: true |
+|image|string|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :group
+
+## groupテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|strin|null: false|
+
+### Association
+- has_many :massages
+- has_many :users_groups
+- has_many :users, through:members
