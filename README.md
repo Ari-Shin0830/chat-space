@@ -40,7 +40,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|strin|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :massages
